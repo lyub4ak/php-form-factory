@@ -1,0 +1,32 @@
+{
+  "name": "vendor_name/package_name",
+  "description": "description_text",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "author's name",
+      "email": "email@example.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "app\\": ""
+    }
+  },
+  "require": {
+    "php": ">=7.1.0",
+    "ext-pdo": "*",
+    "ext-json": "*",
+    "ext-iconv": "*",
+    "ext-gd": "*",
+    "bower-asset/jquery": ">=3.3",
+    "bower-asset/jquery.maskedinput": "^1.4"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact form</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="contact-container">
+        <form id="contact-form" action= "ajax_form.php" method= "POST">
+            <div><label>Имя: <input type="text" name="name" maxlength="255"> </label></div>
+            <div>
+                <label for="phone">Телефон: </label>
+                <select id="country">
+                    <option value="ru">Россия +7</option>
+                    <option value="ua">Украина +380</option>
+                    <option value="by">Белоруссия +375</option>
+                </select>
+                <input id="phone" type="tel" name="phone">
+            </div>
+            <div>
+                <label>Сообщение:<br>
+                    <textarea rows="10" cols="45" name="message" maxlength="65535"></textarea>
+                </label>
+            </div>
+            <div>
+                <label>Место хранения:
+                    <select id="storage" name="storage">
+                        <option value="my_sql">MySQL</option>
+                        <option value="file">Текстовый файл</option>
+                    </select>
+                </label>
+            </div>
+            <div>
+                <img src='captcha/captcha.php' id='captcha-image' alt="captcha">
+                <a href="javascript:void(0);" onclick="document.getElementById('captcha-image').src = 'captcha/captcha.php';">
+                    Обновить капчу
+                </a>
+            </div>
+            <div><label>Введите капчу: <input type="text" name="<?= $captcha_code; ?>"></label></div>
+
+            <button title="Заполните все поля, чтобы отправить форму." disabled>Отправить</button>
+        </form>
+    </div>
+    <div id="error-container" class="error"></div>
+    <script src="vendor/bower-asset/jquery/dist/jquery.min.js"></script>
+    <script src="vendor/bower-asset/jquery.maskedinput/dist/jquery.maskedinput.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
